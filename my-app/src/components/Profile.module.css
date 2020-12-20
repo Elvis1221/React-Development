@@ -1,0 +1,25 @@
+.profile {
+    grid-area: c;
+    background-color: #2460ff;
+}
+.profileCont {
+    width: 600px;
+}
+
+.profileLog{
+    width: 50px;
+}
+.mypost {
+    color: white;
+}
+
+.posts {
+    color: #ff2437;
+}
+.item {
+    color: mediumseagreen;
+}
+
+.item.gold {
+    color: gold;
+}
