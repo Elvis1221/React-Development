@@ -1,0 +1,11 @@
+.profile {
+    grid-area: c;
+    background-color: rgba(31, 97, 255, 0.35);
+}
+.profileCont {
+    width: 600px;
+}
+
+.profileLog{
+    width: 50px;
+}
