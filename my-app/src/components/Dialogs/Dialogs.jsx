@@ -1,8 +1,7 @@
 import React from 'react';
 import s from './dialogs.module.css'
 import {NavLink} from "react-router-dom";
-import {messageObj} from "./messageObj/MessageObj";
-import {dialogObj} from "./dialogObj/DialogObj";
+// import {dialogObj, messageObj} from "../../index";
 
 const DialogItem = ({id, name}) => {
     return (
@@ -17,17 +16,17 @@ const Messages = ({message}) => {
         <div className={s.message}>{message}</div>
     )
 };
-export const Dialogs = (props) => {
+export const Dialogs = ({dialog,message}) => {
     return (
         <div className={s.dialogs}>
             <div className={`${s.dialogsItems} ${s.active}`}>
                 {
-                    dialogObj.map(d => <DialogItem name={d.name} id={d.id}/>)
+                    dialog.map(d => <DialogItem name={d.name} id={d.id}/>)
                 }
             </div>
             <div className={s.messages}>
                 {
-                    messageObj.map(m => <Messages message={m.message}/>)
+                    message.map(m => <Messages message={m.message}/>)
                 }
             </div>
         </div>

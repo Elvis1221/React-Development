@@ -1,9 +1,9 @@
 import React from "react";
 import s from './MyPosts.module.css'
 import Post from "./Post/Post";
-import {postsObj} from "./Post/postObj/postObj";
+// import {postsObj} from "../../../index";
 
-const MyPosts = () => {
+const MyPosts = ({posts}) => {
     return <div className={s.mypost}>
         My posts
         <div className={s.posts}>
@@ -18,7 +18,7 @@ const MyPosts = () => {
 
             <div className={s.posts}>
                 {
-                    postsObj.map((post) => <Post message={post.message} count={post.LikesCount}/>)
+                    posts.map((p) => <Post message={p.message} count={p.LikesCount}/>)
                 }
             </div>
 
