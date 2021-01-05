@@ -3,9 +3,9 @@ import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 
-export const Profile = ({posts}) => {
+export const Profile = ({profile}) => {
     return <div>
         <ProfileInfo/>
-        <MyPosts posts={posts}/>
+        <MyPosts posts={profile.postsObj}/>
     </div>
 };

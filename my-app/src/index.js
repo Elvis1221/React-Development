@@ -3,70 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
- const messageObj = [
-    {
-        id: '1',
-        message: 'HI'
-    },
-    {
-        id: '2',
-        message: 'HOW ARE YOU?'
-    },
-    {
-        id: '3',
-        message: 'I`m fine'
-    },
-    {
-        id: '4',
-        message: 'Yourself?'
-    },
-];
-
-const dialogObj = [
-    {
-        id: '1',
-        name: 'Elvis',
-    },
-    {
-        id: '2',
-        name: 'Dinam',
-    },
-    {
-        id: '3',
-        name: 'Smouk',
-    },
-    {
-        id: '4',
-        name: 'Zik',
-    },
-    {
-        id: '5',
-        name: 'Rita',
-    },
-];
-
- const postsObj = [
-    {
-        id: 1,
-        LikesCount: '15',
-        message: 'Mi,how are post',
-    },
-    {
-        id: 2,
-        LikesCount: '20',
-        message: 'My next post',
-    },
-    {
-        id: 3,
-        LikesCount: '24',
-        message: 'Talk my  post',
-    },
-];
+import {state} from "./redux/state";
 
 ReactDOM.render(
     <React.StrictMode>
-        <App messageObj={messageObj} dialogObj={dialogObj} postsObj={postsObj}/>
+        <App state={state}/>
     </React.StrictMode>,
     document.getElementById('root')
 );

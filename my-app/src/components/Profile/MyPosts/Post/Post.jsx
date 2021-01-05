@@ -9,7 +9,7 @@ const Post = ({message, count}) => {
         {message}
         <div>
             <span className={s.likePost}>
-                <img className={s.like} src="https://pngicon.ru/file/uploads/serdce-256x237.png" alt=""/>
+                <img src="https://pngicon.ru/file/uploads/serdce-256x237.png" alt=""/>
                 {count}
             </span>
         </div>

@@ -3,8 +3,12 @@
     background-color: rgb(13, 13, 13)
 
 }
-
-.header img {
-    margin-top: 5px;
-    width: 80px;
+.header h3 {
+    font-size: 25px;
+    color: yellow;
 }
+
+/*.header img {*/
+/*    margin-top: 5px;*/
+/*    width: 80px;*/
+/*}*/

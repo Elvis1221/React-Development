@@ -1,13 +1,25 @@
 .dialogs {
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 1fr 11fr;
     padding: 20px;
 }
+
+.dialogsItem {
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
 
 .dialogsItems a {
     text-decoration: none;
     color: green;
+}
+
+.dialogsItems img {
+    width: 50px;
 }
 
 .dialogsItems .activeLink {
@@ -15,9 +27,21 @@
 }
 
 .messages {
+    /*display: grid;*/
+    /*grid-template: [start] "message" 12fr [row2] "messge" 12fr;*/
     padding: 20px;
 }
 
 .message {
+    display: grid;
+    grid-template-rows: 6fr 6fr;
+    justify-items: start;
+
+    padding-left: 20px;
     color: black;
+}
+
+
+.message img {
+    width: 50px;
 }

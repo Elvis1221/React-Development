@@ -9,15 +9,15 @@ import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
 
-const App = ({messageObj,dialogObj,postsObj}) => {
+const App = ({state}) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
-                    <Route path='/Dialogs' render={() => <Dialogs dialog={dialogObj} message={messageObj} />}/>
-                    <Route path='/Profile' render={() => <Profile  posts={postsObj}/>}/>
+                    <Route path='/Dialogs' render={() => <Dialogs dialogs={state.dialogsPage} />}/>
+                    <Route path='/Profile' render={() => <Profile  profile={state.profilePage}/>}/>
                     <Route path='/News' render={() => <News/>}/>
                     <Route path='/Music' render={() => <Music/>}/>
                     <Route path='/Settings' render={() => <Settings/>}/>
