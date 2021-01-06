@@ -1,7 +1,7 @@
 import React from "react";
 import s from './ProfileCont.module.css'
 
-export const ProfileCont = (props) => {
+export const ProfileCont = () => {
     return <div>
         <div>
             <img className={s.profileCont}

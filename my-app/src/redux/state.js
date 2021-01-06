@@ -20,6 +20,14 @@ export const state = {
                 message: 'Talk my  post',
             },
         ],
+        //доработать информацию о пользователе.
+        // userInfoObj:[
+        //     {
+        //         city:'Grodno',
+        //         language:'Grodno',
+        //         interests:''
+        //     }
+        // ]}]
     },
     dialogsPage: {
         messageObj: [
@@ -75,5 +83,25 @@ export const state = {
             },
         ],
     },
+    navBarPage: {
+        friends: [
+            {
+                id: 1,
+                userImg: "https://mir-avatarok.3dn.ru/_si/0/03342719.jpg",
+                name: 'Andrey'
+            },
+            {
+                id: 2,
+                userImg: "https://mir-avatarok.3dn.ru/_si/0/91640574.png",
+                name: 'Igor'
+            },
+            {
+                id: 3,
+                userImg: "https://lh3.googleusercontent.com/proxy/ItM53cn6C6d3wLPlAYEkNEl7A_Ivsr0_QbBjA8qbhj7tmC0z_3ABUiDh3w6C6UoQROJAlGvsWOEv7ZI79L5r6jTZopcHsvfk3lHgYb8yLcyGs7p9JtRwPTbItqp52iAFOJzXLMSAJ3ktBHCt",
+                name: 'Vika'
+            },
+        ]
+    }
+
 };
 

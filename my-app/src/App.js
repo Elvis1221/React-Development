@@ -14,7 +14,7 @@ const App = ({state}) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar/>
+                <Navbar navBar={state.navBarPage}/>
                 <div className='app-wrapper-content'>
                     <Route path='/Dialogs' render={() => <Dialogs dialogs={state.dialogsPage} />}/>
                     <Route path='/Profile' render={() => <Profile  profile={state.profilePage}/>}/>

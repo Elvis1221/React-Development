@@ -1,0 +1,11 @@
+.friendsItem a {
+    text-decoration: none;
+    color: red;
+}
+
+.friendsItem img {
+    display: grid;
+    width: 40px;
+    border-radius: 50%;
+}
+

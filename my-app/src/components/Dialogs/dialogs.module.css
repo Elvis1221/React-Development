@@ -30,6 +30,8 @@
     /*display: grid;*/
     /*grid-template: [start] "message" 12fr [row2] "messge" 12fr;*/
     padding: 20px;
+    /*border: 1px solid black;*/
+    border-left: 1px solid gray;
 }
 
 .message {

@@ -4,9 +4,10 @@
     padding: 20px;
 }
 
-/*.item {*/
-/*    text-decoration: none;*/
-/*}*/
+.item {
+    margin-bottom: 15px;
+}
+
 .item a {
     text-decoration: none;
     color: white;
@@ -14,4 +15,10 @@
 
 .item a.activeLink {
     color: gold;
+}
+
+.friends {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
 }

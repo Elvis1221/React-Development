@@ -1,8 +1,9 @@
 import React from "react";
 import s from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
+import {Friends} from "./Friends/Friends";
 
-export const Navbar = () => {
+export const Navbar = ({navBar}) => {
     return <nav className={s.nav}>
         <div className={s.item}>
             <NavLink to='/Profile' activeClassName={s.activeLink}>Профиль</NavLink>
@@ -19,5 +20,11 @@ export const Navbar = () => {
         <div className={s.item}>
             <NavLink to='/Settings' activeClassName={s.activeLink}>Настройки</NavLink>
         </div>
+        <div className={s.friends}>
+            {
+                navBar.friends.map(n => <Friends name={n.name} userImg={n.userImg} id={n.id}/>)
+            }
+        </div>
+
     </nav>
 };
