@@ -97,7 +97,7 @@ export const state = {
             },
             {
                 id: 3,
-                userImg: "https://lh3.googleusercontent.com/proxy/ItM53cn6C6d3wLPlAYEkNEl7A_Ivsr0_QbBjA8qbhj7tmC0z_3ABUiDh3w6C6UoQROJAlGvsWOEv7ZI79L5r6jTZopcHsvfk3lHgYb8yLcyGs7p9JtRwPTbItqp52iAFOJzXLMSAJ3ktBHCt",
+                userImg: "https://mir-avatarok.3dn.ru/_si/0/03342719.jpg",
                 name: 'Vika'
             },
         ]

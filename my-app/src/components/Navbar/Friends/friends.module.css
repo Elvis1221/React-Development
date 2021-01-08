@@ -1,10 +1,14 @@
+.friendsItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .friendsItem a {
     text-decoration: none;
-    color: red;
+    color: white;
 }
 
 .friendsItem img {
-    display: grid;
     width: 40px;
     border-radius: 50%;
 }
