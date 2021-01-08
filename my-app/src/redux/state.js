@@ -32,23 +32,32 @@ export const state = {
     dialogsPage: {
         messageObj: [
             {
-                id: 1,
-                userImg: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
-                message: 'Hi! How are you?'
+                server: {
+                    id: 1,
+                    user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
+                    message: 'Здарова братка! Как дела? Что нового?',
+                },
+
+                local: {
+                    id: 1,
+                    user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+                    message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
+
+                }
             },
             {
-                id: 2,
-                userImg: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-                message: 'Hi. I`m fine'
+                server: {
+                    id: 2,
+                    user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
+                    message: 'Да я ВОВ ебашу)',
+                },
+
+                local: {
+                    id: 2,
+                    user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+                    message: 'Задрот блять)!'
+                }
             },
-            // {
-            //     id: 3,
-            //     message: ''
-            // },
-            // {
-            //     id: 4,
-            //     message: 'Yourself?'
-            // },
         ],
         dialogObj: [
             {

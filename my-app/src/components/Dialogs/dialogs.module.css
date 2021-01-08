@@ -47,3 +47,11 @@
 .message img {
     width: 50px;
 }
+/*.serverUser {*/
+/*    grid-area: server;*/
+/*}*/
+
+.user {
+    grid-area: user;
+
+}

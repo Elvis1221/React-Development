@@ -8,12 +8,26 @@ export const Dialogs = ({dialogs}) => {
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
                 {
-                    dialogs.dialogObj.map(d => <DialogItem name={d.name} id={d.id} img={d.userImg}/>)
+                    dialogs.dialogObj.map(d =>
+                        <DialogItem
+                            name={d.name}
+                            id={d.id}
+                            img={d.userImg}
+                        />)
                 }
             </div>
             <div className={s.messages}>
                 {
-                    dialogs.messageObj.map(m => <Messages message={m.message} id={m.id} img={m.userImg}/>)
+                    dialogs.messageObj
+                        .map(m =>
+                            <Messages
+                                serverMessage={m.server.message}
+                                serverId={m.server.id}
+                                serverUser={m.server.user}
+                                message={m.local.message}
+                                id={m.local.id}
+                                user={m.local.user}
+                            />)
                 }
             </div>
         </div>
