@@ -1,0 +1,11 @@
+.userInfo {
+    display: flex;
+}
+.userLog{
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+}
+.text {
+    width: 300px;
+}
