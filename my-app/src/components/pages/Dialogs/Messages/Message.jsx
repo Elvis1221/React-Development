@@ -1,15 +1,21 @@
 import React from 'react';
-import s from '../dialogs.module.css'
+
+import s from './messages.module.css'
+
 
 export const Message = ({message, user, serverMessage, serverUser}) => (
   <div className={s.message}>
-    <div className={s.sererUser}>
+    <div className={s.serverUser}>
       <img src={serverUser} alt="test"/>
-      <span>{serverMessage}</span>
+      <span className={s.colorMessage}>
+        {serverMessage}
+      </span>
     </div>
-    <div className={s.user}>
+    <div className={s.localUser}>
       <img src={user} alt="test"/>
-      {message}
+      <span className={s.colorMessage}>
+        {message}
+      </span>
     </div>
   </div>
 );

@@ -1,0 +1,21 @@
+.message {
+    display: grid;
+    grid-template-areas: 'serverUser' 'user';
+    color: black;
+}
+
+.message img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.serverUser {
+    grid-area: serverUser;
+}
+
+.localUser {
+    grid-area: localUser;
+}
+
+.colorMessage {
+}

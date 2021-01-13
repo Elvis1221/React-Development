@@ -1,5 +1,7 @@
 import React from "react";
+
 import s from './ProfileCont.module.css'
+
 
 export const ProfileCont = () => {
     return <div>

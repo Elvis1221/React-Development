@@ -1,6 +1,5 @@
-import s from "../components/pages/Dialogs/dialogs.module.css";
-import React from "react";
-
+let rerenderEntireTree = () => {
+};
 export const state = {
   profilePage: {
     postsObj: [
@@ -8,26 +7,22 @@ export const state = {
         id: 1,
         LikesCount: '15',
         message: 'Mi,how are post',
+        date: new Date(),
       },
       {
         id: 2,
         LikesCount: '20',
         message: 'My next post',
+        date: new Date(),
       },
       {
         id: 3,
         LikesCount: '24',
         message: 'Talk my  post',
+        date: new Date(),
       },
     ],
-    //доработать информацию о пользователе.
-    // userInfoObj:[
-    //     {
-    //         city:'Grodno',
-    //         language:'Grodno',
-    //         interests:''
-    //     }
-    // ]}]
+    newPostText: 'Написать сообщение',
   },
   dialogsPage: {
     messageObj: [
@@ -37,12 +32,10 @@ export const state = {
           user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
           message: 'Здарова братка! Как дела? Что нового?',
         },
-
         local: {
           id: 1,
           user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
           message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
-
         }
       },
       {
@@ -51,7 +44,6 @@ export const state = {
           user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
           message: 'Да я ВОВ ебашу)',
         },
-
         local: {
           id: 2,
           user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
@@ -61,3 +53,40 @@ export const state = {
     ],
   },
 };
+window.state = state;
+
+export const addPost = () => {
+  const newPost = {
+    id: 4,
+    LikesCount: '0',
+    message: state.profilePage.newPostText,
+    date: new Date(),
+  };
+  state.profilePage.postsObj.push(newPost);
+  state.profilePage.newPostText = '';
+  rerenderEntireTree(state)
+};
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state)
+};
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer
+};
+
+// export const tick = () => (new Date());
+
+
+// export const addMessage = (userMessage) => {
+//     const newMessage = {
+//       server: {
+//         id: 2,
+//         user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+//         message: userMessage
+//       }
+//     };
+//     state.dialogsPage.messageObj.push(newMessage)
+//   }
+// ;

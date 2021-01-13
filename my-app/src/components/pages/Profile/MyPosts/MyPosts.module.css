@@ -1,6 +1,9 @@
-
 .mypost {
     padding: 10px;
+}
+
+.mypost h3 {
+    margin: 0;
 }
 .item {
     color: black;
@@ -13,7 +16,7 @@
     padding-top: 10px;
 }
 
-.posts {
+.post {
     margin-top: 10px;
 }
 .addButton {

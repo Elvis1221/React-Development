@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import s from './friends.module.css'
 
 export const Friend = ({name, userImg, id}) => (
-  <div className={s.friendsItem}>
+  <div className={s.friendItem}>
     <img src={userImg} alt=""/>
     <NavLink to={`/Profile/${id}`}>{name}</NavLink>
   </div>

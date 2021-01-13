@@ -1,7 +1,6 @@
 import React from "react";
-import {BrowserRouter, Route} from "react-router-dom";
 
-import './App.css';
+import {BrowserRouter, Route} from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
@@ -11,16 +10,22 @@ import {News} from "./components/pages/News/News";
 import {Music} from "./components/pages/Music/Music";
 import {Settings} from "./components/pages/Settings/Settings";
 
+import './App.css';
 
-const App = ({ state }) => {
+
+const App = ({state, addPost, updateNewPostText}) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header/>
-        <Navbar />
+        <Navbar/>
         <div className='app-wrapper-content'>
-          <Route path='/Dialogs' render={() => <Dialogs />}/>
-          <Route path='/Profile' render={() => <Profile profile={state.profilePage}/>}/>
+
+          <Route path='/Dialogs' render={() => <Dialogs/>}/>
+          <Route path='/Profile' render={() => <Profile profilePage={state.profilePage}
+                                                        addPost={addPost}
+                                                        updateNewPostText={updateNewPostText}
+          />}/>
           <Route path='/News' render={() => <News/>}/>
           <Route path='/Music' render={() => <Music/>}/>
           <Route path='/Settings' render={() => <Settings/>}/>

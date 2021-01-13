@@ -5,6 +5,8 @@ import {Message} from "./Messages/Message";
 
 import {dialogsMock, messagesMock} from "./Diaglogs.mock";
 
+import {SetMessage} from "./Messages/SetMessage/SetMessage";
+
 import s from './dialogs.module.css'
 
 
@@ -32,12 +34,15 @@ const renderMessages = () => messagesMock
   );
 
 export const Dialogs = () => (
-  <div className={s.dialogs}>
-    <div className={s.dialogsItems}>
-      {renderDialogList()}
+  <div className={s.wrapperDialogs}>
+    <div className={s.dialogs}>
+      <div className={s.dialogsItems}>
+        {renderDialogList()}
+      </div>
+      <div className={s.messages}>
+        {renderMessages()}
+      </div>
     </div>
-    <div className={s.messages}>
-      {renderMessages()}
-    </div>
+    <SetMessage />
   </div>
 );

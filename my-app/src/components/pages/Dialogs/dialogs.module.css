@@ -1,6 +1,11 @@
+.wrapperDialogs {
+    display: flex;
+    flex-direction: column;
+
+}
 .dialogs {
     display: grid;
-    grid-template-rows: auto 1fr;
+    /*grid-template-rows: auto 1fr;*/
     grid-template-columns: 1fr 11fr;
     padding: 20px;
 }
@@ -10,6 +15,8 @@
     grid-template-rows: 1fr;
     justify-items: center;
     margin-bottom: 20px;
+    /*border-right: 1px solid gray;*/
+
 }
 
 
@@ -27,31 +34,6 @@
 }
 
 .messages {
-    /*display: grid;*/
-    /*grid-template: [start] "message" 12fr [row2] "messge" 12fr;*/
+    border-left: 1px solid black;
     padding: 20px;
-    /*border: 1px solid black;*/
-    border-left: 1px solid gray;
-}
-
-.message {
-    display: grid;
-    grid-template-rows: 6fr 6fr;
-    justify-items: start;
-
-    padding-left: 20px;
-    color: black;
-}
-
-
-.message img {
-    width: 50px;
-}
-/*.serverUser {*/
-/*    grid-area: server;*/
-/*}*/
-
-.user {
-    grid-area: user;
-
 }
