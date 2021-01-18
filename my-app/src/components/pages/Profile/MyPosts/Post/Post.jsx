@@ -2,6 +2,7 @@ import React from "react";
 import s from './Post.module.css'
 
 const Post = ({message, count, date}) => {
+
   return (
     <div className={s.item}>
       <div className={s.userPost}>

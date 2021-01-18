@@ -21,7 +21,7 @@ const App = ({state, addPost, updateNewPostText}) => {
         <Navbar/>
         <div className='app-wrapper-content'>
 
-          <Route path='/Dialogs' render={() => <Dialogs/>}/>
+          <Route path='/Dialogs' render={() => <Dialogs />}/>
           <Route path='/Profile' render={() => <Profile profilePage={state.profilePage}
                                                         addPost={addPost}
                                                         updateNewPostText={updateNewPostText}

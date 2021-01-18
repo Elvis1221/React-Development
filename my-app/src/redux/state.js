@@ -5,7 +5,6 @@ export const state = {
     postsObj: [
       {
         id: 1,
-        LikesCount: '15',
         message: 'Mi,how are post',
         date: new Date(),
       },
@@ -22,36 +21,37 @@ export const state = {
         date: new Date(),
       },
     ],
-    newPostText: 'Написать сообщение',
+    // newPostText: 'Написать сообщение',
   },
-  dialogsPage: {
-    messageObj: [
-      {
-        server: {
-          id: 1,
-          user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
-          message: 'Здарова братка! Как дела? Что нового?',
-        },
-        local: {
-          id: 1,
-          user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-          message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
-        }
-      },
-      {
-        server: {
-          id: 2,
-          user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
-          message: 'Да я ВОВ ебашу)',
-        },
-        local: {
-          id: 2,
-          user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-          message: 'Задрот блять)!'
-        }
-      },
-    ],
-  },
+  // dialogsPage: {
+  //   messageObj: [
+  //     {
+  //       server: {
+  //         id: 1,
+  //         user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
+  //         message: 'Здарова братка! Как дела? Что нового?',
+  //       },
+  //       local: {
+  //         id: 1,
+  //         user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+  //         message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
+  //       }
+  //     },
+  //     {
+  //       server: {
+  //         id: 2,
+  //         user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
+  //         message: 'Да я ВОВ ебашу)',
+  //       },
+  //       local: {
+  //         id: 2,
+  //         user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+  //         message: 'Задрот блять)!'
+  //       }
+  //     },
+  //   ],
+  // },
+
 };
 window.state = state;
 
@@ -76,17 +76,3 @@ export const subscribe = (observer) => {
   rerenderEntireTree = observer
 };
 
-// export const tick = () => (new Date());
-
-
-// export const addMessage = (userMessage) => {
-//     const newMessage = {
-//       server: {
-//         id: 2,
-//         user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-//         message: userMessage
-//       }
-//     };
-//     state.dialogsPage.messageObj.push(newMessage)
-//   }
-// ;

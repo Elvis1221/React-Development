@@ -3,7 +3,7 @@ import MyPosts from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 
 
-export const Profile = ({profilePage, addPost, updateNewPostText, date}) => {
+export const Profile = ({profilePage, addPost, updateNewPostText}) => {
   return <div>
     <ProfileInfo/>
     <MyPosts posts={profilePage.postsObj}

@@ -37,3 +37,8 @@
     border-left: 1px solid black;
     padding: 20px;
 }
+
+.buttonAddMessage {
+    width: 100px;
+    height: 100px;
+}

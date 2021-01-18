@@ -1,11 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {DialogItem} from "./DialogItem/DialogItem";
+// import {SetMessage} from "./Messages/SetMessage/SetMessage";
 import {Message} from "./Messages/Message";
-
-import {dialogsMock, messagesMock} from "./Diaglogs.mock";
-
-import {SetMessage} from "./Messages/SetMessage/SetMessage";
+import {dialogsMock} from "./Diaglogs.mock";
 
 import s from './dialogs.module.css'
 
@@ -20,7 +18,7 @@ const renderDialogList = () => dialogsMock
     />
   );
 
-const renderMessages = () => messagesMock
+const renderMessages = (item) => item
   .map(({server, local}, index) =>
     <Message
       key={index}
@@ -33,16 +31,42 @@ const renderMessages = () => messagesMock
     />
   );
 
-export const Dialogs = () => (
-  <div className={s.wrapperDialogs}>
-    <div className={s.dialogs}>
-      <div className={s.dialogsItems}>
-        {renderDialogList()}
+export const Dialogs = () => {
+  const [messages, setMessages] = useState([]);
+  const addMessage = () => {
+    setMessages(() => {
+        return [
+          ...messages,
+          {
+            server: {
+              id: 1,
+              user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
+              message: 'Здарова братка! Как дела? Что нового?',
+            },
+            local: {
+              id: 1,
+              user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+              message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
+            }
+          }
+        ]
+      }
+    )
+  };
+
+  return (
+    <div className={s.wrapperDialogs}>
+      <div className={s.dialogs}>
+        <div className={s.dialogsItems}>
+          {renderDialogList()}
+        </div>
+        <div className={s.messages}>
+          {renderMessages(messages)}
+        </div>
       </div>
-      <div className={s.messages}>
-        {renderMessages()}
-      </div>
-    </div>
-    <SetMessage />
-  </div>
-);
+      <button className={s.buttonAddMessage} onClick={ addMessage}> добавить сообщение</button>
+
+      {/*<SetMessage/>*/}
+    </div>);
+};
+
