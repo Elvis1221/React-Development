@@ -1,78 +1,67 @@
-let rerenderEntireTree = () => {
-};
-export const state = {
-  profilePage: {
-    postsObj: [
-      {
-        id: 1,
-        message: 'Mi,how are post',
-        date: new Date(),
-      },
-      {
-        id: 2,
-        LikesCount: '20',
-        message: 'My next post',
-        date: new Date(),
-      },
-      {
-        id: 3,
-        LikesCount: '24',
-        message: 'Talk my  post',
-        date: new Date(),
-      },
-    ],
-    // newPostText: 'Написать сообщение',
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_POST = 'ADD-POST';
+
+export const store = {
+  _state: {
+    profilePage: {
+      postsObj: [
+        {
+          id: 1,
+          message: 'Mi,how are post',
+          date: new Date(),
+        },
+        {
+          id: 2,
+          LikesCount: '20',
+          message: 'My next post',
+          date: new Date(),
+        },
+        {
+          id: 3,
+          LikesCount: '24',
+          message: 'Talk my  post',
+          date: new Date(),
+        },
+      ],
+      newPostText: 'Написать сообщение',
+    },
   },
-  // dialogsPage: {
-  //   messageObj: [
-  //     {
-  //       server: {
-  //         id: 1,
-  //         user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
-  //         message: 'Здарова братка! Как дела? Что нового?',
-  //       },
-  //       local: {
-  //         id: 1,
-  //         user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-  //         message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
-  //       }
-  //     },
-  //     {
-  //       server: {
-  //         id: 2,
-  //         user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
-  //         message: 'Да я ВОВ ебашу)',
-  //       },
-  //       local: {
-  //         id: 2,
-  //         user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-  //         message: 'Задрот блять)!'
-  //       }
-  //     },
-  //   ],
-  // },
+  _callSubscriber() {
+    console.log('state changed')
+  },
 
+  getState() {
+    return this._state
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer
+  },
+
+  _addPost() {
+    const newPost = {
+      id: 4,
+      LikesCount: '2',
+      message: this._state.profilePage.newPostText,
+      date: new Date(),
+    };
+    this._state.profilePage.postsObj.push(newPost);
+    this._state.profilePage.newPostText = '';
+    this._callSubscriber(this._state)
+  },
+  _updateNewPostText(newText) {
+    this._state.profilePage.newPostText = newText;
+    this._callSubscriber(this._state)
+  },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      this._addPost()
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._updateNewPostText(action.newText)
+    }
+  }
 };
-window.state = state;
+export const addNewPostActionCreator = () => ({type: ADD_POST});
+export const updateNewPostTextActionCreator = text => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const addPost = () => {
-  const newPost = {
-    id: 4,
-    LikesCount: '0',
-    message: state.profilePage.newPostText,
-    date: new Date(),
-  };
-  state.profilePage.postsObj.push(newPost);
-  state.profilePage.newPostText = '';
-  rerenderEntireTree(state)
-};
-
-export const updateNewPostText = (newText) => {
-  state.profilePage.newPostText = newText;
-  rerenderEntireTree(state)
-};
-
-export const subscribe = (observer) => {
-  rerenderEntireTree = observer
-};
-
+window.store = store;

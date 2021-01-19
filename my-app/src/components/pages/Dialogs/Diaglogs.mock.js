@@ -32,32 +32,32 @@ export const dialogsMock = [
 ];
 
 
-export const messages = [
-  // {
-  //   server: {
-  //     id: 1,
-  //     user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
-  //     message: 'Здарова братка! Как дела? Что нового?',
-  //   },
-  //
-  //   local: {
-  //     id: 1,
-  //     user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-  //     message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
-  //
-  //   }
-  // },
-  // {
-  //   server: {
-  //     id: 2,
-  //     user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
-  //     message: 'Да я отдыхаю)',
-  //   },
-  //
-  //   local: {
-  //     id: 2,
-  //     user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-  //     message: 'ззз тебе)!'
-  //   }
-  // },
-];
+// export const messages = [
+//   // {
+//   //   server: {
+//   //     id: 1,
+//   //     user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
+//   //     message: 'Здарова братка! Как дела? Что нового?',
+//   //   },
+//   //
+//   //   local: {
+//   //     id: 1,
+//   //     user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+//   //     message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
+//   //
+//   //   }
+//   // },
+//   // {
+//   //   server: {
+//   //     id: 2,
+//   //     user: "https://pngimg.com/uploads/car_logo/car_logo_PNG1658.png",
+//   //     message: 'Да я отдыхаю)',
+//   //   },
+//   //
+//   //   local: {
+//   //     id: 2,
+//   //     user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
+//   //     message: 'ззз тебе)!'
+//   //   }
+//   // },
+// ];

@@ -1,23 +1,59 @@
-.mypost {
+.wrapperProfile {
     padding: 10px;
 }
 
-.mypost h3 {
-    margin: 0;
+/*.wrapperProfile h3 {*/
+/*    margin: 0;*/
+/*}*/
+.wrapperPost {
+    display: flex;
+    flex-direction: column;
 }
+
+.myNotes {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 .item {
     color: black;
 }
+
 .item img {
     width: 50px;
-
 }
+
 .textarea {
     padding-top: 10px;
 }
 
-.post {
-    margin-top: 10px;
+.formPost {
+    margin-top: 20px;
 }
-.addButton {
+
+.buttonAddPost {
+    background: #f9f9f9;
+    border: 1px solid #948d8a;
+    border-radius: 7px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    margin: 5px 0 20px 0;
+}
+
+.buttonAddPost:active, .buttonAddPost:hover {
+    background: white;
+}
+
+.inputPost {
+    height: 80px;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #948d8a;
+    border-radius: 10px;
+    text-align: justify;
+}
+.post {
+    display: flex;
+    flex-direction: column;
 }

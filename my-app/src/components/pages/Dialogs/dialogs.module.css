@@ -1,8 +1,10 @@
 .wrapperDialogs {
     display: flex;
     flex-direction: column;
+    background-color: #f9f9f9;
 
 }
+
 .dialogs {
     display: grid;
     /*grid-template-rows: auto 1fr;*/
@@ -16,9 +18,7 @@
     justify-items: center;
     margin-bottom: 20px;
     /*border-right: 1px solid gray;*/
-
 }
-
 
 .dialogsItems a {
     text-decoration: none;
@@ -34,11 +34,36 @@
 }
 
 .messages {
-    border-left: 1px solid black;
+    border-left: 1px solid rgba(148, 141, 138, 0.25);
+    border-bottom: 1px solid rgba(148, 141, 138, 0.25);
     padding: 20px;
 }
 
-.buttonAddMessage {
-    width: 100px;
-    height: 100px;
+.formAddMessage {
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-end;
+    width: 400px;
+    align-items: center;
+}
+
+.buttonMessage {
+    background: #f9f9f9;
+    border: 1px solid #948d8a;
+    border-radius: 5px;
+    margin-left: 10px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.buttonMessage:active, .buttonMessage:hover {
+    background: white;
+}
+
+.inputMessage {
+    height: 60px;
+    width: 300px;
+    border: 1px solid #948d8a;
+    border-radius: 10px;
+    text-align: justify;
 }

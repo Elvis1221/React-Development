@@ -13,7 +13,7 @@ import {Settings} from "./components/pages/Settings/Settings";
 import './App.css';
 
 
-const App = ({state, addPost, updateNewPostText}) => {
+const App = ({state, dispatch}) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -21,10 +21,9 @@ const App = ({state, addPost, updateNewPostText}) => {
         <Navbar/>
         <div className='app-wrapper-content'>
 
-          <Route path='/Dialogs' render={() => <Dialogs />}/>
+          <Route path='/Dialogs' render={() => <Dialogs/>}/>
           <Route path='/Profile' render={() => <Profile profilePage={state.profilePage}
-                                                        addPost={addPost}
-                                                        updateNewPostText={updateNewPostText}
+                                                        dispatch = {dispatch}
           />}/>
           <Route path='/News' render={() => <News/>}/>
           <Route path='/Music' render={() => <Music/>}/>

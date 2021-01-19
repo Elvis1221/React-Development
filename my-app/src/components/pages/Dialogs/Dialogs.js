@@ -33,7 +33,7 @@ const renderMessages = (item) => item
 
 export const Dialogs = () => {
   const [messages, setMessages] = useState([]);
-  const addMessage = () => {
+  const addMessage = (writeMessage) => {
     setMessages(() => {
         return [
           ...messages,
@@ -46,13 +46,14 @@ export const Dialogs = () => {
             local: {
               id: 1,
               user: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",
-              message: 'Хай братка! Все нормально,из  нового... Учу инглиш) А ты чем занимаешься?'
+              message: writeMessage
             }
           }
         ]
       }
     )
   };
+  const [writeMessage, setWriteMessage] = useState('');
 
   return (
     <div className={s.wrapperDialogs}>
@@ -64,7 +65,13 @@ export const Dialogs = () => {
           {renderMessages(messages)}
         </div>
       </div>
-      <button className={s.buttonAddMessage} onClick={ addMessage}> добавить сообщение</button>
+      <div className={s.formAddMessage}>
+        <input className={s.inputMessage} onChange={(e) => setWriteMessage(e.target.value)}></input>
+        <button className={s.buttonMessage} onClick={() => addMessage(writeMessage)}>
+         Отправить
+        </button>
+      </div>
+
 
       {/*<SetMessage/>*/}
     </div>);

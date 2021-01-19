@@ -16,7 +16,9 @@ const Post = ({message, count, date}) => {
           <img src="https://pngicon.ru/file/uploads/serdce-256x237.png" alt=""/>
           <span>{count}</span>
         </div>
-        <span>{date.toLocaleTimeString()}</span>
+        <span>
+          {date.toLocaleTimeString()}
+        </span>
       </div>
     </div>
   )
