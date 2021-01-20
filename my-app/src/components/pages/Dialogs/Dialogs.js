@@ -33,6 +33,8 @@ const renderMessages = (item) => item
 
 export const Dialogs = () => {
   const [messages, setMessages] = useState([]);
+  const [writeMessage, setWriteMessage] = useState('');
+
   const addMessage = (writeMessage) => {
     setMessages(() => {
         return [
@@ -53,8 +55,6 @@ export const Dialogs = () => {
       }
     )
   };
-  const [writeMessage, setWriteMessage] = useState('');
-
   return (
     <div className={s.wrapperDialogs}>
       <div className={s.dialogs}>
@@ -66,10 +66,15 @@ export const Dialogs = () => {
         </div>
       </div>
       <div className={s.formAddMessage}>
-        <input className={s.inputMessage} onChange={(e) => setWriteMessage(e.target.value)}></input>
-        <button className={s.buttonMessage} onClick={() => addMessage(writeMessage)}>
-         Отправить
-        </button>
+        <div>
+           <textarea className={s.inputMessage}
+                     onChange={(e) => setWriteMessage(e.target.value)}/>
+        </div>
+        <div>
+          <button className={s.buttonMessage} onClick={() => addMessage(writeMessage)}>
+            Отправить
+          </button>
+        </div>
       </div>
 
 

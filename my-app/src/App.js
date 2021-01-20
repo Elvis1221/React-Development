@@ -15,7 +15,6 @@ import './App.css';
 
 const App = ({state, dispatch}) => {
   return (
-    <BrowserRouter>
       <div className='app-wrapper'>
         <Header/>
         <Navbar/>
@@ -23,14 +22,14 @@ const App = ({state, dispatch}) => {
 
           <Route path='/Dialogs' render={() => <Dialogs/>}/>
           <Route path='/Profile' render={() => <Profile profilePage={state.profilePage}
-                                                        dispatch = {dispatch}
+                                                        dispatch={dispatch}
           />}/>
           <Route path='/News' render={() => <News/>}/>
           <Route path='/Music' render={() => <Music/>}/>
           <Route path='/Settings' render={() => <Settings/>}/>
         </div>
       </div>
-    </BrowserRouter>);
+  )
 };
 
 export default App;
