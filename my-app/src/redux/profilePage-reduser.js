@@ -5,42 +5,39 @@ let initialState = {
   postsObj: [
     {
       id: 1,
-      message: 'Mi,how are post',
+      message: 'Мой пост 1',
       date: new Date(),
     },
     {
       id: 2,
       LikesCount: '20',
-      message: 'My next post',
+      message: 'Мой пост 2',
       date: new Date(),
     },
     {
       id: 3,
       LikesCount: '24',
-      message: 'Talk my  post',
+      message: 'Мой пост 3',
       date: new Date(),
     },
   ],
-  newPostText: 'Написать сообщение',
+  newPostText: '',
 };
 
 
-const profilePageReducer = (state = initialState, action) => {
+export const profilePageReducer = (state = initialState, action) => {
 
-  switch (action.type) {
-    case ADD_POST:
-      const newPost = {
-        id: 4,
-        LikesCount: '2',
-        message: state.newPostText,
-        date: new Date(),
-      };
-      state.postsObj.push(newPost);
-      state.newPostText = '';
-      break;
-    case UPDATE_NEW_POST_TEXT:
-      state.newPostText = action.newText;
-      break;
+  if (action.type === ADD_POST) {
+    const newPost = {
+      id: 4,
+      LikesCount: '2',
+      message: state.newPostText,
+      date: new Date(),
+    };
+    state.postsObj.push(newPost);
+    state.newPostText = '';
+  } else if (action.type === UPDATE_NEW_POST_TEXT) {
+    state.newPostText = action.newText;
   }
 
   return state
@@ -49,5 +46,3 @@ const profilePageReducer = (state = initialState, action) => {
 
 export const addNewPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostTextActionCreator = text => ({type: UPDATE_NEW_POST_TEXT, newText: text});
-
-export default profilePageReducer

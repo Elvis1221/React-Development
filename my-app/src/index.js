@@ -8,10 +8,10 @@ import App from './App';
 import './index.css';
 
 
-const rerenderEntireTree = (state) => {
+const rerenderEntireTree = state => {
   ReactDOM.render(
     <BrowserRouter>
-      <App state={state} dispatch={store.dispatch.bind(store)}/>
+      <App state={state} dispatch={store.dispatch.bind(store)} store={store}/>
     </BrowserRouter>, document.getElementById('root'))
 };
 
@@ -19,6 +19,6 @@ const rerenderEntireTree = (state) => {
 rerenderEntireTree(store.getState());
 
 store.subscribe(() => {
-  let state = store.getState();
+  const state = store.getState();
   rerenderEntireTree(state)
 });

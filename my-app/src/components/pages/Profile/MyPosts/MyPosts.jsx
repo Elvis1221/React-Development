@@ -7,16 +7,16 @@ import {addNewPostActionCreator, updateNewPostTextActionCreator} from "../../../
 import s from './MyPosts.module.css'
 
 
-const MyPosts = ({posts, newPostText, dispatch}) => {
-
+const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost}) => {
   const newPostElement = React.createRef();
 
-  const addNewPost = () => dispatch(addNewPostActionCreator());
+  const onAddPost = () => {
+    addNewPost();
+  };
   const onPostChange = () => {
     const text = newPostElement.current.value;
-    dispatch(updateNewPostTextActionCreator(text))
+    updateNewPostText(text)
   };
-
   return (
     <div className={s.wrapperProfile}>
       <h3>Написать пост :</h3>
@@ -24,7 +24,7 @@ const MyPosts = ({posts, newPostText, dispatch}) => {
           <textarea className={s.inputPost} onChange={onPostChange}
                     ref={newPostElement}
                     value={newPostText}/>
-        <button className={s.buttonAddPost} onClick={addNewPost}>
+        <button className={s.buttonAddPost} onClick={onAddPost}>
           Добавить пост
         </button>
       </div>

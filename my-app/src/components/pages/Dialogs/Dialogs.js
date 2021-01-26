@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
 
 import {DialogItem} from "./DialogItem/DialogItem";
-// import {SetMessage} from "./Messages/SetMessage/SetMessage";
 import {Message} from "./Messages/Message";
 import {dialogsMock} from "./Diaglogs.mock";
 
 import s from './dialogs.module.css'
 
-
-const renderDialogList = () => dialogsMock
-  .map(({name, id, userImg}, index) =>
+const renderDialogList = () =>
+  dialogsMock.map(({name, id, userImg}, index) =>
     <DialogItem
       key={index}
       name={name}
@@ -18,8 +16,8 @@ const renderDialogList = () => dialogsMock
     />
   );
 
-const renderMessages = (item) => item
-  .map(({server, local}, index) =>
+const renderMessages = items =>
+  items.map(({server, local}, index) =>
     <Message
       key={index}
       serverMessage={server.message}
@@ -31,11 +29,12 @@ const renderMessages = (item) => item
     />
   );
 
-export const Dialogs = () => {
+const DialogsContainer = () => {
   const [messages, setMessages] = useState([]);
   const [writeMessage, setWriteMessage] = useState('');
 
-  const addMessage = (writeMessage) => {
+  const onWriteMessage = (e) => setWriteMessage(e.target.value);
+  const addMessage = () => {
     setMessages(() => {
         return [
           ...messages,
@@ -55,30 +54,45 @@ export const Dialogs = () => {
       }
     )
   };
+
+  const messagesList = renderMessages(messages);
+  const dialogsList = renderDialogList();
+
   return (
-    <div className={s.wrapperDialogs}>
-      <div className={s.dialogs}>
-        <div className={s.dialogsItems}>
-          {renderDialogList()}
-        </div>
-        <div className={s.messages}>
-          {renderMessages(messages)}
-        </div>
-      </div>
-      <div className={s.formAddMessage}>
-        <div>
-           <textarea className={s.inputMessage}
-                     onChange={(e) => setWriteMessage(e.target.value)}/>
-        </div>
-        <div>
-          <button className={s.buttonMessage} onClick={() => addMessage(writeMessage)}>
-            Отправить
-          </button>
-        </div>
-      </div>
-
-
-      {/*<SetMessage/>*/}
-    </div>);
+    <Dialogs
+      messagesList={messagesList}
+      dialogsList={dialogsList}
+      onClick={addMessage}
+      onChange={onWriteMessage}
+    />
+  )
 };
+// вынести в новый файл
+const Dialogs = ({dialogsList, messagesList, onClick, onChange}) => (
+  <div className={s.wrapperDialogs}>
+    <div className={s.dialogs}>
+      <div className={s.dialogsItems}>
+        {dialogsList}
+      </div>
+      <div className={s.messages}>
+        {messagesList}
+      </div>
+    </div>
+    <div className={s.formAddMessage}>
+      <div>
+           <textarea
+             className={s.inputMessage}
+             onChange={onChange}
+           />
+      </div>
+      <div>
+        <button className={s.buttonMessage} onClick={onClick}>
+          Отправить
+        </button>
+      </div>
+    </div>
+  </div>
+);
 
+export default Dialogs
+export {DialogsContainer}

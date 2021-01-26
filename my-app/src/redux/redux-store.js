@@ -1,5 +1,5 @@
 import {combineReducers, createStore} from "redux";
-import profilePageReducer from "./profilePage-reduser";
+import {profilePageReducer} from "./profilePage-reduser";
 import {sidebarReducer} from "./sidebar-reducer";
 
 
@@ -8,5 +8,5 @@ let reducers = combineReducers({
   sidebar:sidebarReducer
 });
 
-export let store = createStore(reducers);
+export const store = createStore(reducers);
 

@@ -9,15 +9,21 @@ const Post = ({message, count, date}) => {
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVKbu8z0yxaCcLGx9BjbD_26DcjSyuF9B8DA&usqp=CAU"
           alt=""/>
-        <span>{message}</span>
+        <span>
+          {message}
+        </span>
       </div>
       <div className={s.informationPost}>
         <div className={s.likePost}>
           <img src="https://pngicon.ru/file/uploads/serdce-256x237.png" alt=""/>
-          <span>{count}</span>
+          <span>
+            {count}
+          </span>
         </div>
         <span>
-          {date.toLocaleTimeString()}
+          {
+            date.toLocaleTimeString ()
+          }
         </span>
       </div>
     </div>

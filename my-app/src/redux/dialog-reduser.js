@@ -24,7 +24,6 @@
 //   newPostText: 'Написать сообщение',
 // };
 //
-//
 // const profilePageReducer = (state = initialState, action) => {
 //
 //   switch (action.type) {
@@ -42,9 +41,7 @@
 //       state.newPostText = action.newText;
 //       break;
 //   }
-//
 //   return state
-//
 // };
 //
 // export const addNewPostActionCreator = () => ({type: ADD_POST});
