@@ -1,4 +1,4 @@
-export const dialogsMock = [
+export const dialogsUsersMock = [
   {
     id: 1,
     userImg: "https://png-images.ru/wp-content/uploads/2015/02/car_logo_PNG1661-170x170.png",

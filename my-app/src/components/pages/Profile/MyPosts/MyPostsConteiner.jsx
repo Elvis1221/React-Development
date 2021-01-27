@@ -5,7 +5,7 @@ import {addNewPostActionCreator, updateNewPostTextActionCreator} from "../../../
 import MyPosts from "./MyPosts";
 
 
-const MyPostsContainer = ({dispatch,posts,newPostText}) => {
+const MyPostsContainer = ({dispatch, posts, newPostText}) => {
   const addNewPost = () => dispatch(addNewPostActionCreator());
 
   const onPostChange = text => {
@@ -13,13 +13,15 @@ const MyPostsContainer = ({dispatch,posts,newPostText}) => {
     dispatch(action)
   };
   return (
-    <MyPosts updateNewPostText={onPostChange}
-             addNewPost={addNewPost}
-             posts={posts}
-             newPostText={newPostText}
+    <MyPosts
+      updateNewPostText={onPostChange}
+      addNewPost={addNewPost}
+      posts={posts}
+      newPostText={newPostText}
     />
   )
 };
+
 export default MyPostsContainer
 
 
