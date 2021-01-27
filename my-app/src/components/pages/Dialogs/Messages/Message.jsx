@@ -6,7 +6,7 @@ import s from './messages.module.css'
 export const Message = ({message, user, serverMessage, serverUser}) => (
   <div className={s.message}>
     <div className={s.serverUser}>
-      <img src={serverUser} alt="test"/>
+      <img src={serverUser} alt="imgUser"/>
       <span className={s.colorMessage}>
         {serverMessage}
       </span>

@@ -4,8 +4,8 @@ import {sidebarReducer} from "./sidebar-reducer";
 
 
 let reducers = combineReducers({
-  profilePage:profilePageReducer,
-  sidebar:sidebarReducer
+  profilePage: profilePageReducer,
+  sidebar: sidebarReducer
 });
 
 export const store = createStore(reducers);

@@ -7,7 +7,7 @@ import Dialogs from "./Dialogs";
 import {dialogsUsersMock} from "./Diaglogs.mock";
 
 
-const renderDialogList = () =>(
+const renderDialogList = () => (
   dialogsUsersMock.map(({name, id, userImg}, index) =>
     <DialogItem
       key={index}

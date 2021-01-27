@@ -4,13 +4,10 @@ import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsConteiner";
 
 
-export const Profile = ({profilePage, dispatch}) =>(
+export const Profile = () =>(
   <div>
     <ProfileInfo/>
-    <MyPostsContainer posts={profilePage.postsObj}
-                      newPostText={profilePage.newPostText}
-                      dispatch={dispatch}
-    />
+    <MyPostsContainer/>
   </div>
   );
 
