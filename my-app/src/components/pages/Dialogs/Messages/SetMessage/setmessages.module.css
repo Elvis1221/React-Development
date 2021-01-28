@@ -1,7 +1,0 @@
-.setMessage  {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 11fr 1fr;
-    padding: 10px;
-    /*align-items: center;*/
-}

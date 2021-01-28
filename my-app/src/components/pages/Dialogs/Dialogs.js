@@ -2,13 +2,13 @@ import React from 'react';
 
 import s from './dialogs.module.css'
 
- const Dialogs = ({dialogsList, messagesList, onClick, onChange}) => (
+const Dialogs = ({dialogsList, messagesList, onClick, onChange}) => (
   <div className={s.wrapperDialogs}>
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>
         {dialogsList}
       </div>
-      <div className={s.messages}>
+      <div className={s.messagesList}>
         {messagesList}
       </div>
     </div>

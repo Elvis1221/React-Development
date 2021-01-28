@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Messages/Message";
-import Dialogs from "./Dialogs";
-
 import {dialogsUsersMock} from "./Diaglogs.mock";
 
+import Dialogs from "./Dialogs";
 
-const renderDialogList = () => (
+
+const renderDialogList = () =>(
   dialogsUsersMock.map(({name, id, userImg}, index) =>
     <DialogItem
       key={index}

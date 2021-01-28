@@ -19,10 +19,15 @@ const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost}) => {
     <div className={s.wrapperProfile}>
       <h3>Написать пост :</h3>
       <div className={s.wrapperPost}>
-          <textarea className={s.inputPost} onChange={onPostChange}
-                    ref={newPostElement}
-                    value={newPostText}/>
-        <button className={s.buttonAddPost} onClick={onAddPost}>
+        <textarea
+          className={s.inputPost}
+          onChange={onPostChange}
+          ref={newPostElement}
+          value={newPostText}
+        />
+        <button
+          className={s.buttonAddPost}
+          onClick={onAddPost}>
           Добавить пост
         </button>
       </div>
