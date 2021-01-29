@@ -32,12 +32,15 @@ export const profilePageReducer = (state = initialState, action) => {
       stateCopy = {
         ...state,
         newPostText: '',
-        postsObj: [{
-          id: 4,
-          LikesCount: '2',
-          message: state.newPostText,
-          date: new Date(),
-        },...state.postsObj]
+        postsObj:
+          [
+            {
+              id: 4,
+              LikesCount: '2',
+              message: state.newPostText,
+              date: new Date(),
+            }, ...state.postsObj
+          ]
       };
       return stateCopy;
     case UPDATE_NEW_POST_TEXT:

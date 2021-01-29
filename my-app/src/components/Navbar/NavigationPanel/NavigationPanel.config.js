@@ -16,6 +16,10 @@ export const navigationData = [
     path: '/Music'
   },
   {
+    title: 'Пользователи',
+    path: '/Users'
+  }
+  ,{
     title: 'Настройки',
     path: '/Settings'
   }
