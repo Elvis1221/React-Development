@@ -21,15 +21,14 @@ let initialState = {
       date: new Date(),
     },
   ],
-  newPostText: '',
+  newPostText: 'test',
 };
 
 export const profilePageReducer = (state = initialState, action) => {
-  let stateCopy;
 
   switch (action.type) {
     case ADD_POST:
-      stateCopy = {
+      return  {
         ...state,
         newPostText: '',
         postsObj:
@@ -42,13 +41,11 @@ export const profilePageReducer = (state = initialState, action) => {
             }, ...state.postsObj
           ]
       };
-      return stateCopy;
     case UPDATE_NEW_POST_TEXT:
-      stateCopy = {
+      return {
         ...state,
         newPostText: action.newText
       };
-      return stateCopy;
     default:
       return state
   }

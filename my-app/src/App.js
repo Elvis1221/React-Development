@@ -9,7 +9,7 @@ import {News} from "./components/pages/News/News";
 import {Music} from "./components/pages/Music/Music";
 import {DialogsContainer} from "./components/pages/Dialogs/DialogsConteiner";
 import {Settings} from "./components/pages/Settings/Settings";
-import UsersContainer from "./components/pages/Users/UsersConteiner";
+import Users from "./components/pages/Users/Users";
 
 
 import './App.css';
@@ -22,15 +22,15 @@ const App = () => {
       <Navbar/>
       <div className='app-wrapper-content'>
         <Route path='/Dialogs'
-               render={() => <DialogsContainer />}/>
+               render={() => <DialogsContainer/>}/>
         <Route path='/Profile'
-               render={() => <Profile />}/>
+               render={() => <Profile/>}/>
         <Route path='/News'
                render={() => <News/>}/>
         <Route path='/Music'
                render={() => <Music/>}/>
         <Route path='/Users'
-               render={() => <UsersContainer />}/>
+               render={() => <Users/>}/>
         <Route path='/Settings'
                render={() => <Settings/>}/>
       </div>

@@ -1,10 +1,41 @@
 import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
+
+import {followActionCreator, setUsersActionCreator, unFollowActionCreator} from "../../../redux/users-reduser";
 
 import './users.css'
 
-export const Users = ( props ) => {
-  if ( props.users.length === 0 ) {
-    props.setUsers( [
+const UsersContainer = () => {
+  const dispatch = useDispatch();// так всегда пишем
+  const {users} = useSelector(state => state.usersPage);
+  const {postsObj} = useSelector(state => state.postsObj);
+
+  const unFollow = userId => dispatch(unFollowActionCreator(userId));
+  const follow = userId => {
+    const updatedUsers = users.map(users => {
+        if (users.id === userId) {
+          return {...users, followed: true}
+        }
+        return users
+      }
+    );
+    dispatch(followActionCreator(updatedUsers));
+  };
+  const setUsers = users => dispatch(setUsersActionCreator(users));
+
+  return (
+    <Users {...{
+      unFollow,
+      follow,
+      setUsers,
+      users
+    }}/>
+  )
+};
+
+export const Users = ({unFollow, follow, setUsers, users}) => {
+  if (users.length === 0) {
+    setUsers([
         {
           id: 1,
           photoUsers: 'https://4tololo.ru/sites/default/files/images/20151308202247.jpg',
@@ -41,10 +72,11 @@ export const Users = ( props ) => {
       ]
     )
   }
+
   return (
     <div className='wrapperUsers'>
       {
-        props.users.map( u => <div key={u.id} className='user'>
+        users.map(u => <div key={u.id} className='user'>
             <div className='userProfile'>
               <div className='usersImg'>
                 <img src={u.photoUsers} alt=""/>
@@ -52,8 +84,8 @@ export const Users = ( props ) => {
               <div className='usersFollow'>
                 {
                   u.followed
-                    ? <button onClick={() => {props.unFollow( u.id )}}>Добавить в друзья</button>
-                    : <button onClick={() => {props.follow( u.id )}}>В друзьях</button>
+                    ? <button onClick={() => unFollow(u.id)}>Добавить в друзья</button>
+                    : <button onClick={() => follow(u.id)}>В друзьях</button>
                 }
               </div>
             </div>
@@ -61,7 +93,6 @@ export const Users = ( props ) => {
               <div>{u.fullName}</div>
               <div>{u.status}</div>
             </div>
-
             <div className='userLocation'>
               <div>{u.location.country}</div>
               <div>{u.location.cityName}</div>
@@ -72,3 +103,6 @@ export const Users = ( props ) => {
     </div>
   )
 };
+
+
+export default UsersContainer

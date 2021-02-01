@@ -6,38 +6,36 @@ let initialState = {
   users: []
 };
 
-export const usersReduser = (state = initialState, action) => {
+export const usersReduser = (state = initialState, {type, payload = {}}) => {
 
-  switch (action.type) {
+  switch (type) {
+
     case  FOLLOW:
       return {
         ...state,
-        users: state.users.map(users => {
-            if (users.id === action.userId) {
-              return {...users, followed: true}
-            }
-            return users
-          }
-        )
+        users: payload
       };
+
     case  UNFOLLOW:
       return {
         ...state,
         users: state.users.map(users => {
-          if (users.id === action.userId) {
+          if (users.id === payload) {
             return {...users, followed: false}
           }
           return users
         })
       };
+
     case SET_USERS: {
-      return {...state, users: [...state.users, ...action.users]}
+      return {...state, users: [...state.users, ...payload]}
     }
+
     default:
       return state
   }
 };
 
-export const followActionCreator = userId => ({type: FOLLOW, userId});
-export const unFollowActionCreator = userId => ({type: UNFOLLOW, userId});
-export const setUsersActionCreator = users => ({type: SET_USERS, users});
+export const followActionCreator = users => ({type: FOLLOW, payload: users});
+export const unFollowActionCreator = userId => ({type: UNFOLLOW, payload: userId});
+export const setUsersActionCreator = users => ({type: SET_USERS, payload: users});
