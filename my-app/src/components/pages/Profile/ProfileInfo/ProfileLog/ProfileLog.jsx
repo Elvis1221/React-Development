@@ -5,7 +5,7 @@ export const ProfileLogo = () => {
     return <div>
         <div className={s.userInfo}>
             <img className={s.userLog}
-                 src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-fitness-badge-sport-logo-png-image_5393352.jpg"
+                 src="https://www.stylenews.ru/wp-content/uploads/2016/08/JasonStatham-00.jpg"
                  alt=""
             />
             <p className={s.text}>

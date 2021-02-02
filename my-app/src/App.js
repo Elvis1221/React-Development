@@ -9,8 +9,7 @@ import {News} from "./components/pages/News/News";
 import {Music} from "./components/pages/Music/Music";
 import {DialogsContainer} from "./components/pages/Dialogs/DialogsConteiner";
 import {Settings} from "./components/pages/Settings/Settings";
-import Users from "./components/pages/Users/Users";
-
+import UsersContainer from "./components/pages/Users/UsersContainer";
 
 import './App.css';
 
@@ -30,7 +29,7 @@ const App = () => {
         <Route path='/Music'
                render={() => <Music/>}/>
         <Route path='/Users'
-               render={() => <Users/>}/>
+               render={() => <UsersContainer/>}/>
         <Route path='/Settings'
                render={() => <Settings/>}/>
       </div>

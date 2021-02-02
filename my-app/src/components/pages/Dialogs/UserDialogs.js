@@ -1,1 +1,0 @@
-import DialogsPresentation from "./Dialogs";

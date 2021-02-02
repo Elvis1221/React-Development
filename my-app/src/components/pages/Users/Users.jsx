@@ -1,76 +1,29 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
 
-import {followActionCreator, setUsersActionCreator, unFollowActionCreator} from "../../../redux/users-reduser";
+import * as axios from "axios";
+import usersPhoto from "../../../assets/images/unnamed.png"
 
 import './users.css'
+// {
+//   id: 1,
+//     photoUsers: 'https://4tololo.ru/sites/default/files/images/20151308202247.jpg',
+//   followed: false,
+//   fullName: 'Rita Krisckyk',
+//   status: 'i am fine',
+//   location: {
+//   cityName: 'Minsk',
+//     country: 'Belarus'
+// },
+// },
 
-const UsersContainer = () => {
-  const dispatch = useDispatch();// так всегда пишем
-  const {users} = useSelector(state => state.usersPage);
-  const {postsObj} = useSelector(state => state.postsObj);
-
-  const unFollow = userId => dispatch(unFollowActionCreator(userId));
-  const follow = userId => {
-    const updatedUsers = users.map(users => {
-        if (users.id === userId) {
-          return {...users, followed: true}
-        }
-        return users
-      }
-    );
-    dispatch(followActionCreator(updatedUsers));
-  };
-  const setUsers = users => dispatch(setUsersActionCreator(users));
-
-  return (
-    <Users {...{
-      unFollow,
-      follow,
-      setUsers,
-      users
-    }}/>
-  )
-};
 
 export const Users = ({unFollow, follow, setUsers, users}) => {
   if (users.length === 0) {
-    setUsers([
-        {
-          id: 1,
-          photoUsers: 'https://4tololo.ru/sites/default/files/images/20151308202247.jpg',
-          followed: false,
-          fullName: 'Rita Krisckyk',
-          status: 'i am fine',
-          location: {
-            cityName: 'Minsk',
-            country: 'Belarus'
-          },
-        },
-        {
-          id: 2,
-          photoUsers: 'https://s.mediasole.ru/cache/content/data/images/1855/1855952/1585556784_morf-1.jpg',
-          followed: true,
-          fullName: 'Igor',
-          status: 'i am boss',
-          location: {
-            cityName: 'Moscow',
-            country: 'Russia'
-          },
-        },
-        {
-          id: 3,
-          photoUsers: 'https://v1.popcornnews.ru/k2/persons/canvas/970x700/upload/686826446912.jpg',
-          followed: false,
-          fullName: 'Zelenskiy',
-          status: ' i am President',
-          location: {
-            cityName: 'Lvov',
-            country: 'Ukraine'
-          },
-        },
-      ]
-    )
+    axios.get('https://social-network.samuraijs.com/api/1.0/users')
+      .then(response => {
+        setUsers(response.data.items)
+      })
+
   }
 
   return (
@@ -79,7 +32,7 @@ export const Users = ({unFollow, follow, setUsers, users}) => {
         users.map(u => <div key={u.id} className='user'>
             <div className='userProfile'>
               <div className='usersImg'>
-                <img src={u.photoUsers} alt=""/>
+                <img src={u.photos.small !== null ? u.photos.small : usersPhoto} alt=""/>
               </div>
               <div className='usersFollow'>
                 {
@@ -90,12 +43,12 @@ export const Users = ({unFollow, follow, setUsers, users}) => {
               </div>
             </div>
             <div className='userInfo'>
-              <div>{u.fullName}</div>
+              <div>{u.name}</div>
               <div>{u.status}</div>
             </div>
             <div className='userLocation'>
-              <div>{u.location.country}</div>
-              <div>{u.location.cityName}</div>
+              <div>{'u.location.country'}</div>
+              <div>{'u.location.cityName'}</div>
             </div>
           </div>
         )
@@ -103,6 +56,3 @@ export const Users = ({unFollow, follow, setUsers, users}) => {
     </div>
   )
 };
-
-
-export default UsersContainer

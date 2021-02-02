@@ -28,7 +28,7 @@ export const profilePageReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case ADD_POST:
-      return  {
+      return {
         ...state,
         newPostText: '',
         postsObj:

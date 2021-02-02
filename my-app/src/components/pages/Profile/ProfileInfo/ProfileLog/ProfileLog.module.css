@@ -2,10 +2,12 @@
     display: flex;
 }
 .userLog{
-    width: 60px;
-    height: 60px;
+    width: 340px;
+    height: 180px;
     padding: 10px;
+    border-radius: 20px;
 }
+
 .text {
     width: 300px;
 }
