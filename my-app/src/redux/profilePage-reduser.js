@@ -21,16 +21,16 @@ let initialState = {
       date: new Date(),
     },
   ],
-  newPostText: 'test',
+  newPostText: '',
 };
 
-export const profilePageReducer = (state = initialState, action) => {
+export const profilePageReducer = (state = initialState, {type,payload}) => {
 
-  switch (action.type) {
+  switch (type) {
     case ADD_POST:
       return {
         ...state,
-        newPostText: '',
+        newPostText: 'da',
         postsObj:
           [
             {
@@ -44,7 +44,7 @@ export const profilePageReducer = (state = initialState, action) => {
     case UPDATE_NEW_POST_TEXT:
       return {
         ...state,
-        newPostText: action.newText
+        newPostText: payload
       };
     default:
       return state
@@ -52,4 +52,4 @@ export const profilePageReducer = (state = initialState, action) => {
 };
 
 export const addNewPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostTextActionCreator = text => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const updateNewPostTextActionCreator = text => ({type: UPDATE_NEW_POST_TEXT, payload: text});

@@ -13,7 +13,20 @@
     color: white;
 }
 
+.item a:hover {
+    color: rgba(255, 222, 0, 0.56);
+    transition: color .2s ease;
+
+}
+
 .item a.activeLink {
-    color: gold;
+    color: #ffde00;
+    transition: color .2s ease;
+
+}
+.item a.activeLink:hover {
+    color: rgba(255, 222, 0, 0.56);
+    transition: color .2s ease;
+
 }
 

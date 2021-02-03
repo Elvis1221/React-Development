@@ -23,7 +23,6 @@ export const Users = ({unFollow, follow, setUsers, users}) => {
       .then(response => {
         setUsers(response.data.items)
       })
-
   }
 
   return (
@@ -31,14 +30,14 @@ export const Users = ({unFollow, follow, setUsers, users}) => {
       {
         users.map(u => <div key={u.id} className='user'>
             <div className='userProfile'>
-              <div className='small'>
+              <div className='smallImg'>
                 <img src={u.photos.small !== null ? u.photos.small : usersPhoto} alt=""/>
               </div>
               <div className='usersFollow'>
                 {
                   u.followed
-                    ? <button onClick={() => unFollow(u.id)}>Добавить в друзья</button>
-                    : <button onClick={() => follow(u.id)}>В друзьях</button>
+                    ? <button onClick={() => unFollow(u.id)} className='unFollow'>Добавить в друзья</button>
+                    : <button onClick={() => follow(u.id)} className='follow'>В друзьях</button>
                 }
               </div>
             </div>
