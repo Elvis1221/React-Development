@@ -53,7 +53,6 @@ const DialogsContainer = () => {
       }
     )
   };
-  console.log(messages)
 
   const dialogsList = renderDialogList();
   const messagesList = renderMessages(messages);

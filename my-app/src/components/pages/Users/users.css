@@ -1,26 +1,52 @@
 .wrapperUsers {
-    width: 600px;
-    margin: 0 auto;
-    /*display: grid;*/
-    /*grid-template-columns:3fr 7fr 2fr;*/
-    /*grid-template-rows:1fr 1fr 1fr;*/
+    height: 700px;
+    overflow-y: scroll;
 }
 
 .user {
-   /*display: flex;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #f5f5f5;
+
+    margin: 20px;
+    padding: 10px;
 }
-.userProfile {
+
+.usersFollow button {
+    width: 110px;
+    min-width: 100px;
+    height: 45px;
+    background: #f6f6f6;
+    border: 1px solid #e6dfdc;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+
 
 }
-.usersImg img{
+
+.usersFollow button:active, .usersFollow button:hover {
+    background: white;
+
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.small img {
     width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    height: 80px;
 }
 
 .userInfo {
 }
 
 .userLocation {
+    /*display: flex;*/
+    /*flex-direction: column;*/
 }

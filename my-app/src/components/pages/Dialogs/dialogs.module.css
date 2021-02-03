@@ -5,6 +5,7 @@
 }
 
 .dialogs {
+    height: 700px;
     display: grid;
     grid-template-columns: 1fr 11fr;
     padding: 20px;
@@ -12,10 +13,9 @@
 
 .dialogsItem {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     justify-items: center;
     margin-bottom: 20px;
-    /*border-right: 1px solid gray;*/
 }
 
 .dialogsItems a {
@@ -34,8 +34,7 @@
 .messagesList {
     border-left: 1px solid rgba(148, 141, 138, 0.25);
     border-bottom: 1px solid rgba(148, 141, 138, 0.25);
-    /*padding: 20px;*/
-    overflow-scrolling: revert;
+    overflow-y: scroll;
 
 }
 

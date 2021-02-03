@@ -31,7 +31,7 @@ export const Users = ({unFollow, follow, setUsers, users}) => {
       {
         users.map(u => <div key={u.id} className='user'>
             <div className='userProfile'>
-              <div className='usersImg'>
+              <div className='small'>
                 <img src={u.photos.small !== null ? u.photos.small : usersPhoto} alt=""/>
               </div>
               <div className='usersFollow'>
