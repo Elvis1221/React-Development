@@ -1,11 +1,13 @@
 .wrapperUsers {
-    height: 700px;
-    overflow-y: scroll;
+    width: 90%;
+    height: 100%;
+    /*overflow-y: scroll;*/
+    margin: 0 auto;
 }
 
 .user {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background: #f5f5f5;
     margin: 20px;
@@ -14,7 +16,7 @@
 
 .usersFollow button {
     width: 100px;
-    min-width: 100px;
+    min-width: 90px;
     height: 43px;
     background: #f6f6f6;
     border: 1px solid #e6dfdc;
@@ -50,8 +52,7 @@
 
 
 .userProfile {
-    display: flex;
-    flex-direction: column;
+    align-content: flex-start;
 
 
 }
@@ -62,13 +63,11 @@
     margin-bottom: 10px;
 }
 
-
 .userInfo {
 }
 
-
 .userLocation {
-    height: 120px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
