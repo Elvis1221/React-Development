@@ -1,5 +1,8 @@
 .item {
+    height: 100%;
+    min-height: 120px;
     color: black;
+    margin: 10px;
 }
 .userPost {
     display: flex;
@@ -17,14 +20,29 @@
 .likePost img {
     width: 20px;
     height: 20px;
-    border-radius: 0;
+    margin-right: 5px;
+    cursor: pointer;
 }
+
+.likePost img:active {
+    width: 19px;
+    height: 19px;
+}
+
 .likePost {
     display: flex;
+    align-items: center;
+    max-width: 50px;
+    min-height: 25px;
 }
+
+.likePost span {
+
+}
+
 .informationPost {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px 15px ;
+    margin: 10px 15px;
 }

@@ -17,8 +17,7 @@
 }
 
 
-
-.localUser,.serverUser {
+.localUser, .serverUser {
     margin: 10px;
     /*flex-wrap: wrap;*/
 

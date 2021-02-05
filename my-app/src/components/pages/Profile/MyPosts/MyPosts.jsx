@@ -5,7 +5,7 @@ import Post from "./Post/Post";
 import s from './MyPosts.module.css'
 
 
-const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost}) => {
+export const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost}) => {
   const newPostElement = React.createRef();
 
   const onAddPost = () => {
@@ -34,16 +34,18 @@ const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost}) => {
       <div className={s.post}>
         <div>Мои записи :</div>
         {
-          posts.map(({message, LikesCount, date}, index) =>
+          posts.map(({message, LikesCount, date, imgUser}, index) =>
             <Post
               key={index}
               message={message}
-              count={LikesCount}
               date={date}
+              value={LikesCount.value}
+              imgCount={LikesCount.img}
+              imgUser={imgUser}
+
             />)
         }
       </div>
     </div>
   )
 };
-export default MyPosts

@@ -1,9 +1,11 @@
 import React from 'react';
-
 import * as axios from "axios";
+
 import usersPhoto from "../../../assets/images/unnamed.png"
 
 import './users.css'
+
+// захардкоженный данные
 // {
 //   id: 1,
 //     photoUsers: 'https://4tololo.ru/sites/default/files/images/20151308202247.jpg',
@@ -14,8 +16,7 @@ import './users.css'
 //   cityName: 'Minsk',
 //     country: 'Belarus'
 // },
-// },
-
+// };
 
 export const Users = ({unFollow, follow, setUsers, users}) => {
   if (users.length === 0) {

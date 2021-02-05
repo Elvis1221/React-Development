@@ -1,13 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
+
 import s from './Post.module.css'
 
-const Post = ({message, count, date}) => {
+
+const Post = ({message, value, imgCount, date, imgUser}) => {
+  const [counter, setCounter] = useState(value);
+
+  const upCounter = () => setCounter(counter + 1);
+
 
   return (
     <div className={s.item}>
       <div className={s.userPost}>
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVKbu8z0yxaCcLGx9BjbD_26DcjSyuF9B8DA&usqp=CAU"
+          src={imgUser}
           alt=""/>
         <span>
           {message}
@@ -15,14 +21,16 @@ const Post = ({message, count, date}) => {
       </div>
       <div className={s.informationPost}>
         <div className={s.likePost}>
-          <img src="https://pngicon.ru/file/uploads/serdce-256x237.png" alt=""/>
+          <img src={imgCount}
+               alt="likes"
+               onClick={upCounter}/>
           <span>
-            {count}
+            {counter}
           </span>
         </div>
         <span>
           {
-            date.toLocaleTimeString ()
+            date.toLocaleTimeString()
           }
         </span>
       </div>
