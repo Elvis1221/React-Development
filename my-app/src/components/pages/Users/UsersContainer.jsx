@@ -23,7 +23,7 @@ const UsersContainer = () => {
   const setUsers = users => dispatch(setUsersActionCreator(users));
 
   return (
-    <Users {...{
+    <Users {...{         //пишем так когда названия пропсов соответствуют названиям значения
       unFollow,
       follow,
       setUsers,

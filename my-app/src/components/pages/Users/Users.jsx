@@ -25,7 +25,6 @@ export const Users = ({unFollow, follow, setUsers, users}) => {
         setUsers(response.data.items)
       })
   }
-
   return (
     <div className='wrapperUsers'>
       {

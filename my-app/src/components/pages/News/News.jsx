@@ -1,10 +1,7 @@
 import React from 'react';
-// import s from './news.module.css'
 
-export const News = (props) => {
-    return (
-        <div>
-            NEWS
-        </div>
-    )
-};
+export const News = ({contentNews}) => (
+  <div>
+    {contentNews}
+  </div>
+);

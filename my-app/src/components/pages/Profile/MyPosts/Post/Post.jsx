@@ -1,32 +1,43 @@
-import React, {useState} from "react";
+import React from "react";
+
+import Like from '../../../../../assets/images/thumbs-up.svg'
+import disLike from '../../../../../assets/images/thumbs-down.svg'
 
 import s from './Post.module.css'
 
 
-const Post = ({message, value, imgCount, date, imgUser}) => {
-  const [counter, setCounter] = useState(value);
-
-  const upCounter = () => setCounter(counter + 1);
-
+const Post = ({message, likesCount, date, imgUser,addDislike,addLike}) => {
 
   return (
     <div className={s.item}>
       <div className={s.userPost}>
         <img
           src={imgUser}
-          alt=""/>
+          alt="user"/>
         <span>
           {message}
         </span>
       </div>
       <div className={s.informationPost}>
         <div className={s.likePost}>
-          <img src={imgCount}
-               alt="likes"
-               onClick={upCounter}/>
-          <span>
-            {counter}
+          <div className='add-like'>
+            <img
+              src={Like}
+              alt="likes"
+              onClick={addLike}/>
+            <span>
+            {likesCount}
           </span>
+          </div>
+          <div className='add-dislike'>
+            <img
+              src={disLike}
+              alt="dislikes"
+              onClick={addDislike}/>
+            <span>
+            {likesCount}
+          </span>
+          </div>
         </div>
         <span>
           {

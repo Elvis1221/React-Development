@@ -3,9 +3,10 @@ import React from "react";
 import Post from "./Post/Post";
 
 import s from './MyPosts.module.css'
+import {PartPostWorking} from "./PartPostWorking";
 
 
-export const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost}) => {
+export const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost, addDislike, addLike, likesCount}) => {
   const newPostElement = React.createRef();
 
   const onAddPost = () => {
@@ -17,32 +18,25 @@ export const MyPosts = ({posts, newPostText, updateNewPostText, addNewPost}) => 
   };
   return (
     <div className={s.wrapperProfile}>
-      <h3>Написать пост :</h3>
-      <div className={s.wrapperPost}>
-        <textarea
-          className={s.inputPost}
-          onChange={onPostChange}
-          ref={newPostElement}
-          value={newPostText}
-        />
-        <button
-          className={s.buttonAddPost}
-          onClick={onAddPost}>
-          Добавить пост
-        </button>
-      </div>
+      <PartPostWorking {...{
+        newPostElement,
+        newPostText,
+        onAddPost,
+        onPostChange,
+      }}
+      />
       <div className={s.post}>
-        <div>Мои записи :</div>
+        <h3>Мои записи :</h3>
         {
-          posts.map(({message, LikesCount, date, imgUser}, index) =>
+          posts.map(({message, date, imgUser}, index) =>
             <Post
               key={index}
               message={message}
               date={date}
-              value={LikesCount.value}
-              imgCount={LikesCount.img}
+              likesCount={likesCount}
               imgUser={imgUser}
-
+              addDislike={addDislike}
+              addLike={addLike}
             />)
         }
       </div>

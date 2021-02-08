@@ -9,15 +9,9 @@ import './index.css';
 import {Provider} from "react-redux";
 
 
-  ReactDOM.render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>, document.getElementById('root'));
-
-
-// store.subscribe(() => {
-//   const state = store.getState();
-//   rerenderEntireTree(state)
-// });
+ReactDOM.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  </BrowserRouter>, document.getElementById('root'));
