@@ -24,10 +24,6 @@ const renderMessages = items => (
       message={local.message}
       id={local.id}
       user={local.userImg}
-      //для прихода с сервера на будующее
-      // serverMessage={server.message}
-      // serverId={server.id}
-      // serverUser={server.userImg}
     />
   ));
 

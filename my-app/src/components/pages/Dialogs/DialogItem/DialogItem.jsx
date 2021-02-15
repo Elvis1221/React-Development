@@ -6,7 +6,7 @@ export const DialogItem = ({id, name, img}) => {
     return (
         <div className={s.dialogsItem}>
             <img src={img} alt=""/>
-            <NavLink to={`/Dialogs/ ${id}`} activeClassName={s.activeLink}>
+            <NavLink to={`/Dialogs/${id}`} activeClassName={s.activeLink}>
                 {name}
             </NavLink>
         </div>
