@@ -7,18 +7,15 @@ import {News} from "./News";
 
 export const NewsContainer = () => {
   const dispatch = useDispatch();
-  const {news} = useSelector(state => state.news);
+  const {news} = useSelector(state => state.newsPage);
 
   const [message, setMessage] = useState('');
 
   const addNews = () => {
-    const newNews = {
-      contentNews: message
-    };
+    const newNews = {contentNews: message};
     dispatch(addNewsAC(newNews));
   };
   const newNewsText = (event) => setMessage(event.target.value);
-
   return (
     <>
       {

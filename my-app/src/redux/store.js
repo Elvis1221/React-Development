@@ -4,7 +4,7 @@ import {profilePageReducer} from "./profilePage-reduser";
 import {sidebarReducer} from "./sidebar-reducer";
 import {usersReduser} from "./users-reduser";
 import {counterReduser} from "./couner-reduser";
-import {newsReduser} from "./news-reduser";
+import {newsPageReduser} from "./news-reduser";
 
 
 let reducers = combineReducers({
@@ -12,6 +12,6 @@ let reducers = combineReducers({
   sidebar: sidebarReducer,
   usersPage: usersReduser,
   counter: counterReduser,
-  news:newsReduser
+  newsPage:newsPageReduser
 });
 export const store = createStore(reducers);

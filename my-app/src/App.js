@@ -11,6 +11,7 @@ import UsersContainer from "./components/pages/Users/UsersContainer";
 
 import './App.css';
 import NewsContainer from "./components/pages/News/NewsContainer";
+import {Api} from "./components/pages/Api/Api";
 
 
 const App = () => {
@@ -31,6 +32,8 @@ const App = () => {
                render={() => <UsersContainer/>}/>
         <Route path='/Settings'
                render={() => <Settings/>}/>
+        <Route path='/API'
+               render={() => <Api/>}/>
       </div>
     </div>
   )

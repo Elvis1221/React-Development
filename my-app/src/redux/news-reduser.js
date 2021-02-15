@@ -4,7 +4,7 @@ const initialState = {
   news: [],
 };
 
-export const newsReduser = (state = initialState, {type,payload}) => {
+export const newsPageReduser = (state = initialState, {type, payload}) => {
   switch (type) {
 
     case ADD_NEWS:

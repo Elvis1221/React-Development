@@ -1,10 +1,10 @@
 import React from 'react';
-// import s from './music.module.css'
 
-export const Music = (props) => {
+
+export const Music = () => {
     return (
-        <div>
-            MUSIC
-        </div>
-    )
-};
+      <button >
+        music
+      </button>
+    );
+  };

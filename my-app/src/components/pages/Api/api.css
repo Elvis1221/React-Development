@@ -1,0 +1,26 @@
+.Api {
+    height: 450px;
+    margin: 20px;
+}
+.test {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #eeeeee;
+}
+
+.test span {
+
+    border: 1px solid wheat;
+}
+
+.films {
+    display: flex;
+    flex-direction: column;
+}
+
+.information-people {
+    display: flex;
+    flex-direction: column;
+}

@@ -19,8 +19,13 @@ export const navigationData = [
     title: 'Пользователи',
     path: '/Users'
   }
-  ,{
+  ,
+  {
     title: 'Настройки',
     path: '/Settings'
+  },
+  {
+    title: 'API',
+    path: '/Api'
   }
 ];

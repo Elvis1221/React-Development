@@ -1,5 +1,5 @@
 import React from 'react';
-// import s from './settings.module.css'
+// import s from './api.css'
 
 export const Settings = (props) => {
     return (
